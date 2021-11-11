@@ -6,10 +6,13 @@ module.exports = {
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
   },
   plugins: [
-    process.env.GOOGLE_ANALYTICS_ID && {
-      resolve: "gatsby-plugin-google-analytics",
+    {
+      resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: process.env.GOOGLE_ANALYTICS_ID,
+        // The property ID; the tracking code won't be generated without it
+        trackingId: "UA-212553115-2",
+        // Defines where to place the tracking script - `true` in the head and `false` in the body
+        head: true,
       },
     },
     `gatsby-plugin-react-helmet`,
